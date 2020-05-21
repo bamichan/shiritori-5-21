@@ -3,13 +3,26 @@
 {% block content %}
 <main class="page-contents wrapper">
   <div class="description">
-    <div>アイディアしりとりの手順</div>
-    <div>テーマ</div>
+    <div>
+      <div class="description-shiritori content">
+        <p>アイディアしりとりとは、<span class="bold">"アイデアは既存の要素の新しい組み合わせ”</span></p><p>というアイデア発想の原則に基づいた、実用性の高いメソッド。</p><p>ランダム性の高い語句を効率よく出し、短時間で多くの組み合わせを試すことができる。</p>
+      </div>
+    </div>
+    <div>
+      <div class="description-thispage content">
+        1. まずテーマを設定して「しりとりを始める」を押します。<br>
+        2. 制限時間内にできるだけしりとりを続けます。<br>
+        3. しりとりで出た言葉から、テーマに沿って連想したものを書きだします。<br>
+        4. 書きだしたものの中から自分が気に入ったものを選んでください。
+      </div>
+    </div>
+    <div class="content">
+      <form action="/" method="POST">
+        <input type="text" name="theme" id="" class="inText" placeholder="テーマを設定">
+        <input type="submit" value="しりとりを始める" class="button">
+        <!-- <a type="button" href="./shiritori.html">開始</a> -->
+      </form>
+    </div>
   </div>
-  <form action="/" method="POST">
-    <input type="text" name="theme" id="">
-    <input type="submit" value="開始">
-    <!-- <a type="button" href="./shiritori.html">開始</a> -->
-  </form>
 </main>
 {% endblock %}
