@@ -14,10 +14,10 @@ PC上のファイルをVScodeなどで開発して、適宜pull-rebaseとプル�
 4. git init<br>
 5. git remote add origin(自分のGitHubのshiritoriアドレス) →説明１<br>
 6. git remote add upstream(私のGitHubのshiritoriアドレス) →説明２<br>
-7. pull --rebase →説明２<br>
+7. pull --rebase →説明２(masterでなくdevelopのブランチで！)<br>
 8. git add と git status<br>
 9. git commit と git log<br>
-10. git push origin master →説明１<br>
+10. git push origin develop →説明１<br>
 11. GitHubからプルリク →説明１<br>
 12. 「7→3→7→8→9→10→11」の繰り返し<br>
 
