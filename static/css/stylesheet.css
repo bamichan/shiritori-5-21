@@ -15,6 +15,10 @@ a {
 img {
   max-width: 100%; /* 画像の大きさ */
 }
+p {/* アイディアしりとり説明 */
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
 
 /* header ----------*/
 
@@ -138,10 +142,40 @@ img {
   width: 150px;
   padding: 10px;
   margin: 0 auto;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
 
 .shiritori-area {
   height: 400px;
+}
+
+/* 連想入力 */
+.thema {
+  border: 2px solid #666666;
+  border-radius: 3px;
+  width: 150px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.remind-area {
+  display: flex;
+  justify-content: center;
+}
+
+.description-remind {
+  margin-top: 20px;
+  margin-right: 10%;
+  margin-left: 10%;
+  text-align: center;
+  border: 2px dashed #666666;
+  border-radius: 10px;
+}
+
+/* あとで消す */
+.shiritori-area {
+  background-color: darkblue;
 }
