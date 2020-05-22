@@ -20,12 +20,12 @@ img {
 
 .page-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;/* タイトルとボタンを両端に */
   height: 90px;
   background-color: #99ccff;
 }
 
-.page-header h1 {
+.page-header h1 {/* タイトルを上下の中央揃え */
   margin: auto 0;
 }
 
@@ -33,10 +33,10 @@ img {
   color: #333333;
 }
 
-.wrapper {
+.wrapper {/* ヘッダー、フッター、メインの幅。広がりすぎると見えにくいため。 */
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 4%;
+  padding: 0 4%;/* タイトル・ボタンを少し中央へ。%にしてスマホ対応 */
 }
 
 .page-header nav {
@@ -56,6 +56,13 @@ img {
   color: #333333;
 }
 
+
+/* footer ----------*/
+.page-footer {
+  background-color: #99ccff;
+  text-align: center;
+}
+
 /* main ----------*/
 .page-contents {
   text-align: center;
@@ -66,19 +73,6 @@ img {
   margin-top: 80px;
   margin-right: 10%;
   margin-left: 10%;
-}
-
-.description-shiritori p {
-  font-size: 20px;
-  margin: 0 0 5px 0;
-}
-
-.description-thispage {
-  font-size: 20px;
-  text-align: left;
-  border: 2px dashed #666666;
-  border-radius: 20px;
-  padding: 20px;
 }
 
 .bold {
@@ -100,7 +94,6 @@ img {
   font-weight: bold;            /* 入力文字の太字 */
   letter-spacing: .1em;         /* 入力文字の間隔 */
 }
-/* --- 入力フィールドにフォーカス ----------------*/
 .inText:focus {
   border-color: #1e6bb9;     /* 枠線色     */
 }
@@ -124,8 +117,31 @@ img {
   opacity: 1;         /* 透明度     */
 }
 
-/* footer ----------*/
-.page-footer {
-  background-color: #99ccff;
-  text-align: center;
+/* topページ */
+.description-shiritori p {/* アイディアしりとり説明 */
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+
+.description-thispage {/* サイトの使い方説明 */
+  font-size: 20px;
+  text-align: left;
+  border: 2px dashed #666666;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/* しりとりページ */
+.timer {
+  border: 2px solid #666666;
+  border-radius: 3px;
+  width: 150px;
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shiritori-area {
+  height: 400px;
 }
