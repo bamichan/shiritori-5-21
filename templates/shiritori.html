@@ -4,26 +4,26 @@
 <!-- しりとりページ -->
 <main class="page-contents wrapper">
 
-  <div class="timer">
-      <div><p>残り時間</p></div>
-      <p id="limit_time">60</p><!-- ここに残り時間表示 -->
-  </div>
-  <div class="start_button">
-      <button id="start" class="button">スタート</button>
-  </div>
+    <div class="timer">
+        <div>
+            <p>残り時間</p>
+        </div>
+        <p id="limit_time">60</p><!-- ここに残り時間表示 -->
+    </div>
+    <div class="start_button">
+        <button id="start" class="button">スタート</button>
+    </div>
 
-  <p class="">しりとりしよう</p>
+    <p class="">しりとりしよう</p>
 
-  <div class="shiritori-area">
-  <!-- ここに入力したしりとりを表示 -->
-  {% for word in word_list %}
-  <p>{{word["id"]}} : {{word["word"]}}</p>
-  {% endfor %}
-  </div>
-  <form action="/shiritori" method="POST" class="margin-bottom">
-      <input type="text" name="words" id="words" class="inText" placeholder="単語を入力">
-      <input type="submit" value="入力" id="words_submit" class="button button-input">
-      <p>{{error_text}}</p>
-  </form>
+    <div class="shiritori-area" id="word_output">
+        <!-- ここに入力したしりとりを表示 -->
+
+    </div>
+    <form action="/shiritori" method="POST" class="margin-bottom" id="shiritori_form">
+        <input type="text" name="words" id="words" class="inText" placeholder="単語を入力">
+        <input type="submit" value="入力" id="words_submit" class="button button-input">
+        <p>{{error_text}}</p>
+    </form>
 </main>
 {% endblock %}
