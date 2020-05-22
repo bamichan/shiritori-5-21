@@ -103,7 +103,7 @@ p {/* アイディアしりとり説明 */
 }
 
 .button {
-  margin-left: 30px;
+  color: #333333;
   display: inline-block;
   border-radius: 10px;        /* 角丸       */
   font-size: 16pt;        /* 文字サイズ */
@@ -119,6 +119,10 @@ p {/* アイディアしりとり説明 */
 .button:hover {
   box-shadow: none;        /* カーソル時の影消去 */
   opacity: 1;         /* 透明度     */
+}
+
+.button-input {
+  margin-left: 30px;
 }
 
 /* topページ */
@@ -144,9 +148,13 @@ p {/* アイディアしりとり説明 */
   padding: 10px;
   margin: 0 auto;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
+}
+
+.start_button {
+  text-align: center;
 }
 
 .shiritori-area {
