@@ -4,9 +4,15 @@
 <!-- しりとりページ -->
 <main class="page-contents wrapper">
   <div>しりとりしよう</div>
-  <div>残り時間</div>
+  <div class="timer">
+      <div>残り時間</div>
+      <div>00:00</div><!-- ここに残り時間表示 -->
+  </div>
+  <div class="shiritori-area">
+<!-- ここに入力したしりとりを表示 -->
+  </div>
 
-  <input type="text" name="shiritori" id="" class="inText" placeholder="テーマを設定">
+  <input type="text" name="shiritori" id="" class="inText" placeholder="単語を入力">
   <input type="submit" value="入力" class="button">
 </main>
 {% endblock %}
