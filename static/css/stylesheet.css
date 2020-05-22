@@ -17,11 +17,10 @@ img {
 }
 p {/* アイディアしりとり説明 */
   font-size: 20px;
-  margin: 0 0 5px 0;
+  margin: 5px 0;
 }
 
 /* header ----------*/
-
 .page-header {
   display: flex;
   justify-content: space-between;/* タイトルとボタンを両端に */
@@ -60,17 +59,16 @@ p {/* アイディアしりとり説明 */
   color: #333333;
 }
 
-
 /* footer ----------*/
 .page-footer {
   background-color: #99ccff;
   text-align: center;
 }
 
-/* main ----------*/
+/* main共通 ----------*/
 .page-contents {
   text-align: center;
-  height: 600px;
+  /* height: 600px; */
 }
 
 .content {
@@ -82,6 +80,13 @@ p {/* アイディアしりとり説明 */
 .bold {
   font-size: 25px;
   font-weight: bold;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+.margin-bottom {
+  margin-bottom: 20px;
 }
 
 .inText {
@@ -100,6 +105,33 @@ p {/* アイディアしりとり説明 */
 }
 .inText:focus {
   border-color: #1e6bb9;     /* 枠線色     */
+}
+
+.outText {
+  box-sizing: border-box;
+  width: 100%;                /* 一旦100%幅     */
+  max-width: 265px;            /* 最大幅 */
+  height: auto;                /* 高さ   */
+  width: 266px;
+  background: #ffffff;       /* 背景色 */
+  border: 2px solid #666666; /* 枠線   */
+  border-radius: 4px;          /* 角丸   */
+  padding: 5px 10px;              /* 文字の余白 */
+  /* margin-left: 30px; */
+  font-size: 16px;              /* 文字サイズ */
+  color: #333333;             /* 文字の色   */
+  font-weight: bold;            /* 文字の太字 */
+  letter-spacing: .1em;         /* 文字の間隔 */
+}
+.outText:hover {
+  border-color: #cc2929;     /* 枠線色     */
+  opacity: 0.8;
+}
+.outText:active {
+  border-color: #cc2929;     /* 枠線色     */
+}
+.outText:focus {
+  border-color: #cc2929;     /* 枠線色     */
 }
 
 .button {
@@ -185,7 +217,45 @@ p {/* アイディアしりとり説明 */
   border-radius: 10px;
 }
 
+/* お気に入りページ */
+.description-favorite {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 10%;
+  margin-left: 10%;
+  text-align: center;
+  border: 2px dashed #666666;
+  border-radius: 10px;
+}
+
+.reminded-contents {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 800px;
+  text-align: center;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+/* 最終ページ */
+.favorited {
+  box-sizing: border-box;
+  width: 100%;                /* 一旦100%幅     */
+  max-width: 265px;            /* 最大幅 */
+  height: auto;                /* 高さ   */
+  width: 266px;
+  background: #ffffff;       /* 背景色 */
+  border: 2px solid #cc2929; /* 枠線   */
+  border-radius: 4px;          /* 角丸   */
+  padding: 5px 10px;              /* 文字の余白 */
+  /* margin-left: 30px; */
+  font-size: 16px;              /* 文字サイズ */
+  color: #333333;             /* 文字の色   */
+  font-weight: bold;            /* 文字の太字 */
+  letter-spacing: .1em;         /* 文字の間隔 */
+}
+
 /* あとで消す */
 .shiritori-area {
-  background-color: darkblue;
+  background-color: #ffccff;
 }
