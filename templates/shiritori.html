@@ -5,11 +5,11 @@
 <main class="page-contents wrapper">
 
   <div class="timer">
-      <div>残り時間</div>
+      <div><p>残り時間</p></div>
       <p id="limit_time">60</p><!-- ここに残り時間表示 -->
   </div>
   <div class="start_button">
-    <button id="start" class="button">スタート</button>
+      <button id="start" class="button">スタート</button>
   </div>
 
   <p class="">しりとりしよう</p>
@@ -20,10 +20,10 @@
   <p>{{word["id"]}} : {{word["word"]}}</p>
   {% endfor %}
   </div>
-  <form action="/shiritori" method="POST">
-    <input type="text" name="words" id="words" class="inText" placeholder="単語を入力">
-    <input type="submit" value="入力" id="words_submit" class="button button-input">
-    <p>{{error_text}}</p>
+  <form action="/shiritori" method="POST" class="margin-bottom">
+      <input type="text" name="words" id="words" class="inText" placeholder="単語を入力">
+      <input type="submit" value="入力" id="words_submit" class="button button-input">
+      <p>{{error_text}}</p>
   </form>
 </main>
 {% endblock %}
