@@ -6,15 +6,25 @@
 
   <div class="timer">
       <div>残り時間</div>
-      <div>00:00</div><!-- ここに残り時間表示 -->
+      <p id="limit_time">60</p><!-- ここに残り時間表示 -->
+      <div class="start_button">
+        <button id="start">スタート</button>
+      </div>
   </div>
+
   <p class="">しりとりしよう</p>
+
   <div class="shiritori-area">
-<!-- ここに入力したしりとりを表示 -->
+  <!-- ここに入力したしりとりを表示 -->
+  {% for word in word_list %}
+  <p>{{word["id"]}} : {{word["word"]}}</p>
+  {% endfor %}
   </div>
-  <div>
-      <input type="text" name="shiritori" id="" class="inText" placeholder="単語を入力">
-      <input type="submit" value="入力" class="button">
-  </div>
+  
+  <form action="/shiritori" method="POST">
+    <input type="text" name="words" id="words" class="inText" placeholder="単語を入力">
+    <input type="submit" value="入力" id="words_submit" class="button">
+    <p>{{error_text}}</p>
+  </form>
 </main>
 {% endblock %}
