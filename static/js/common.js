@@ -1,5 +1,23 @@
 $(function () {
 
+    $('#shiritori_form').on('submit', function (event) {
+        $.ajax({
+                data: {
+                    words: $('#words').val(),
+                },
+                type: 'POST',
+                url: '/shiritori'
+            })
+            .done(function (data) {
+                if (data.error == 'テスト') {
+                    $('#word_output').append('<li>' + data.word_output + '</li>').show();
+                    $('#error_text').hide();
+                } else {
+                    $('#error_text').text(data.error).show();
+                }
+            });
+        event.preventDefault();
+    });
 
 
     // 変数targetに、入力不可にしたい項目を定義
@@ -30,32 +48,34 @@ $(function () {
         // 一定時間経過後に指定ページにジャンプする
         // ジャンプしません!!!
         // waitTimer = 60; // 何秒後に移動する
-        url = "/remind"; // 移動するアドレス
-        function jumpPage() {
-            location.href = url;
-        }
-        setTimeout(jumpPage(), waitTimer * 1000)
-    });
-
-    $('#shiritori_form').on('submit', function (event) {
-        //Ajax通信
-        $.ajax({
-                date: {
-                    //form内inputの値
-                    words: $('words').val()
-                },
-                type: 'POST',
-                url: '/shiritori'
-            })
-            //入力した単語を表示
-            .done(function (data) {
-                $('#word_output').append('<li>' + data.output + '</li>').show();
-            });
-        event.preventDefault();
+        // url = "/remind"; // 移動するアドレス
+        // function jumpPage() {
+        //     location.href = url;
+        // }
+        // setTimeout(jumpPage(), waitTimer * 1000)
     });
 
 
 
+
+    // //①formのsubmitボタンをクリック
+    // $('#form').on('submit', function (event) {
+    //     //②Ajax通信
+    //     $.ajax({
+    //             data: {
+    //                 //③form内inputの値、リクエスト(POST or GET),リクエスト先のURLを記述
+    //                 firstname: $('#firstname').val(),
+    //                 lastname: $('#lastname').val(),
+    //             },
+    //             type: 'POST',
+    //             url: '/test'
+    //         })
+    //         //④formの下に結果を表示
+    //         .done(function (data) {
+    //             $('#output').text(data.output).show();
+    //         });
+    //     event.preventDefault();
+    // });
 
 
 

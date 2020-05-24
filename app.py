@@ -1,7 +1,7 @@
 # splite3をimportする
 import sqlite3
 # flaskをimportしてflaskを使えるようにする
-from flask import Flask , render_template , request , redirect , session,url_for
+from flask import Flask , render_template , request , redirect , session,url_for,jsonify,Blueprint
 #時間ごとに処理する
 import time
 import re
@@ -48,31 +48,19 @@ def shiritori():
         # 2 60秒のカウントダウン
         #sessionからtheme_idを取得
         theme_id = session['theme_id']
-        word = request.form.get("words")
+        word = request.form.get('words')
         #正規表現で入力をひらがな限定
         if not word_re(word):
-            error_text = "ひらがなで入力してください"
-            return render_template('shiritori.html',error_text = error_text)
+            return jsonify({'error' : 'ひらがなで入力してください'})
         else:
-            error_text = ""
             conn = sqlite3.connect('service.db')
             c = conn.cursor()
             #db shiritori に theme_idと単語をインサート
             c.execute("insert into shiritori values(?,?,null)", (theme_id,word,) )
             conn.commit()
-            #db から最初に入力したテーマと紐づいている単語を取得
-            c.execute("select word from shiritori where theme_id = ?",(theme_id,))
-            words = []
-            word_list = []
-            for row in c.fetchall():
-                words.append(row[0])
-            for i in range(len(words)):
-                list_item = words[i]
-                word_list.append({"id":i,"word":list_item})
-
             conn.close()
-            return render_template('shiritori.html',word_list = word_list,error_text = error_text)
-
+            # return render_template('shiritori.html',word_list = word_list,error_text = error_text)
+            return jsonify({'word_output':word,'error':'テスト'})
 
 
 
