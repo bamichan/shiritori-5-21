@@ -58,28 +58,6 @@ $(function () {
 
 
 
-    // //①formのsubmitボタンをクリック
-    // $('#form').on('submit', function (event) {
-    //     //②Ajax通信
-    //     $.ajax({
-    //             data: {
-    //                 //③form内inputの値、リクエスト(POST or GET),リクエスト先のURLを記述
-    //                 firstname: $('#firstname').val(),
-    //                 lastname: $('#lastname').val(),
-    //             },
-    //             type: 'POST',
-    //             url: '/test'
-    //         })
-    //         //④formの下に結果を表示
-    //         .done(function (data) {
-    //             $('#output').text(data.output).show();
-    //         });
-    //     event.preventDefault();
-    // });
-
-
-
-
 
 
 
