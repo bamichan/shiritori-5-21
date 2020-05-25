@@ -67,25 +67,6 @@ def shiritori():
             return jsonify({'error' : 'ひらがなかカタカナで入力してください'})
 
 
-# @app.route('/remind',methods=["GET","POST"])
-# def remind():
-#     if request.method == "GET":
-#         if 'theme_id' is None:
-#             # theme_id が設定されていないとトップページに戻す
-#             return render_template("index.html")
-#         else:
-#             return render_template("remind.html")
-#     else:
-#         theme_id = session['theme_id']
-#         conn = sqlite3.connect('service.db')
-#         c = conn.cursor()
-#         #db shiritori に theme_idと単語をインサート
-#         c.execute("select ", (theme_id,)
-#         conn.commit()
-#         conn.close()
-#         return render_template("remind.html")
-
-
 @app.route('/remind',methods=["GET","POST"])
 def remind():
     if request.method == "GET":
