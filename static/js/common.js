@@ -9,13 +9,16 @@ $(function () {
                 url: '/shiritori'
             })
             .done(function (data) {
-                if (data.error == 'テスト') {
+                if (data.error == '入力完了') {
                     $('#word_output').append('<li>' + data.word_output + '</li>').show();
                     $('#error_text').hide();
                 } else {
                     $('#error_text').text(data.error).show();
                 }
             });
+        $("#shiritori_form").each(function () {
+            $(this).find('input#words').val('');
+        });
         event.preventDefault();
     });
 
