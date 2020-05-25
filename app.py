@@ -80,6 +80,13 @@ def remind():
         theme_id = session['theme_id']
         remind = request.form.get('remind')
 
+        # テーマ名を取ってくる
+        conn = sqlite3.connect("servise.db")
+        c = conn.cursor()
+        c.execute("select theme from themes where id = ?", (theme_id,))
+        theme = c.fetchone()
+        c.close()
+
         # しりとりの内容を取ってくる
         conn = sqlite3.connect("servise.db")
         c = conn.cursor()
@@ -100,7 +107,7 @@ def remind():
         conn.commit()
         conn.close()
         # return render_template('shiritori.html',word_list = word_list,error_text = error_text)
-        return render_template("remind.html",shiritori_word = shiritori_list[1])
+        return render_template("remind.html", shiritori_word = shiritori_list[1], theme = theme)
 
 ## おまじない
 if __name__ == "__main__":
