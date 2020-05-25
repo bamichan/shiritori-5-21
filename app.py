@@ -106,7 +106,7 @@ def remind():
         c.execute("insert into remind values(?,?,?)", (theme_id,shiritori_id,remind,) )
         conn.commit()
         conn.close()
-        # return render_template('shiritori.html',word_list = word_list,error_text = error_text)
+
         return render_template("remind.html", shiritori_word = shiritori_list[1], theme = theme)
 
 ## おまじない
