@@ -12,7 +12,7 @@ app.secret_key = 'sunabakoza'
 
 #正規表現
 def word_re(word):
-    re_hiragana = re.compile(r'^[あ-ん]+$')
+    re_hiragana = re.compile(r'^[あ-ん\u30A1-\u30F4ー]+$')
     return re_hiragana.fullmatch(word)
 
 @app.route('/',methods=["GET", "POST"])
@@ -45,29 +45,45 @@ def top():
 @app.route('/shiritori',methods=["GET","POST"])
 def shiritori():
     if request.method == "GET":
-        if theme_id is None:
+        if 'theme_id' is None:
             # theme_id が設定されていないとトップページに戻す
             return render_template("index.html")
         else:
             return render_template("shiritori.html")
     else:
-        # １開始ボタンを押すとしりとりゲームが始まる
-        # 2 60秒のカウントダウン
         #sessionからtheme_idを取得
         theme_id = session['theme_id']
         word = request.form.get('words')
         #正規表現で入力をひらがな限定
-        if not word_re(word):
-            return jsonify({'error' : 'ひらがなで入力してください'})
-        else:
+        if word_re(word):
             conn = sqlite3.connect('service.db')
             c = conn.cursor()
             #db shiritori に theme_idと単語をインサート
-            c.execute("insert into shiritori values(?,?,null)", (theme_id,word,) )
+            c.execute("insert into shiritori values(?,?,null)", (theme_id,word,))
             conn.commit()
             conn.close()
-            # return render_template('shiritori.html',word_list = word_list,error_text = error_text)
             return jsonify({'word_output':word,'error':'テスト'})
+        else:
+            return jsonify({'error' : 'ひらがなかカタカナで入力してください'})
+
+
+# @app.route('/remind',methods=["GET","POST"])
+# def remind():
+#     if request.method == "GET":
+#         if 'theme_id' is None:
+#             # theme_id が設定されていないとトップページに戻す
+#             return render_template("index.html")
+#         else:
+#             return render_template("remind.html")
+#     else:
+#         theme_id = session['theme_id']
+#         conn = sqlite3.connect('service.db')
+#         c = conn.cursor()
+#         #db shiritori に theme_idと単語をインサート
+#         c.execute("select ", (theme_id,)
+#         conn.commit()
+#         conn.close()
+#         return render_template("remind.html")
 
 
 
