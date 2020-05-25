@@ -45,7 +45,7 @@ def top():
 @app.route('/shiritori',methods=["GET","POST"])
 def shiritori():
     if request.method == "GET":
-        if theme_id is None:
+        if 'theme_id' is None:
             # theme_id が設定されていないとトップページに戻す
             return render_template("index.html")
         else:
