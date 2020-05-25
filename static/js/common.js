@@ -27,6 +27,10 @@ $(function () {
     $('#words_submit').prop('disabled', true);
 
     $('.start_button button').on('click', function () {
+        // 一定時間経過後に指定ページにジャンプする
+        setTimeout(function () {
+            location.href = "/remind";
+        }, 60000);
         //スタートボタンを隠す
         $('.start_button').css('display', 'none');
         //しりとりフォームを入力できるようにする
@@ -45,14 +49,6 @@ $(function () {
                 clearInterval(id)
             }
         }, 1000);
-        // 一定時間経過後に指定ページにジャンプする
-        // ジャンプしません!!!
-        // waitTimer = 60; // 何秒後に移動する
-        // url = "/remind"; // 移動するアドレス
-        // function jumpPage() {
-        //     location.href = url;
-        // }
-        // setTimeout(jumpPage(), waitTimer * 1000)
     });
 
 
