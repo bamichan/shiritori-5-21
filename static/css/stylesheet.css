@@ -254,8 +254,3 @@ p {/* アイディアしりとり説明 */
   font-weight: bold;            /* 文字の太字 */
   letter-spacing: .1em;         /* 文字の間隔 */
 }
-
-/* あとで消す */
-.shiritori-area {
-  background-color: #ffccff;
-}
