@@ -30,7 +30,7 @@ $(function () {
         // 一定時間経過後に指定ページにジャンプする
         setTimeout(function () {
             location.href = "/remind";
-        }, 60000);
+        }, 65000);
         //スタートボタンを隠す
         $('.start_button').css('display', 'none');
         //しりとりフォームを入力できるようにする
@@ -41,7 +41,11 @@ $(function () {
         var countup = function () {
             time -= 1;
             console.log(time)
-            $("#limit_time").text(time);
+            if (time < 0) {
+                $("#limit_time").text('終了です');
+            } else {
+                $("#limit_time").text(time);
+            }
         }
         var id = setInterval(function () {
             countup();
