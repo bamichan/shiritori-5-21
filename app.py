@@ -62,7 +62,7 @@ def shiritori():
             c.execute("insert into shiritori values(?,?,null)", (theme_id,word,))
             conn.commit()
             conn.close()
-            return jsonify({'word_output':word,'error':'テスト'})
+            return jsonify({'word_output':word,'error':'入力完了'})
         else:
             return jsonify({'error' : 'ひらがなかカタカナで入力してください'})
 
