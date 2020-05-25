@@ -2,21 +2,16 @@
 {% block content %}
 <!-- 連想ページ -->
 <main class="page-contents wrapper">
-  <div class="thema content"><p>（例）テーマ</p><!-- テーマ表示 成重さんよろしく！ --></div>
+  <div class="theme content"><p>{{theme}}</p><!-- テーマ表示 --></div>
 
   <div class="description-remind"><p>言葉とテーマを掛け合わせて連想したものを書き出していきましょう</p></div>
 
   <div class="remind-area">
     <div class="shiritori-area">
-      （例）りんご
-      <!-- しりとり表示欄 成重さんよろしく！ -->
+      {{shiritori_word}}
     </div>
-    <div class="inText">
-      <!-- 連想 成重さんよろしく！ -->
-    </div>
-    <div class="inText">
-      <!-- 連想 成重さんよろしく！ -->
-    </div>
+    <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
+    <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
   </div>
 
   <div>
