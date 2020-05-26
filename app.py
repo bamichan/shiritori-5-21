@@ -118,19 +118,29 @@ def remind():
         return render_template("remind.html", shiritori_word = shiritori_list[1], theme = theme)
 
 @app.route('/favorite',methods=["GET","POST"])
-def faborite():
+def favorite():
     if request.method == "GET":
         if 'theme_id' is None:
             # theme_id が設定されていないとトップページに戻す
             return render_template("index.html")
         else:
-            
-            return render_template("favorite.html")
+            theme_id = session['theme_id']
+            conn = sqlite3.connect("servise.db")
+            c = conn.cursor()
+            c.execute("select remind from remind where theme_id = ?", (theme_id,))
+            remind_list = []
+            for row in c.fetchall():
+                remind_list.append({'remind': row[0]})
+            c.close() 
+            return render_template("favorite.html",remind_list = remind_list)
     else:
+        conn = sqlite3.connect("servise.db")
+        c = conn.cursor()
+        c.execute("select remind from remind where theme_id = ?", (theme_id,))
         return redirect('/finish')
 
 @app.route('/finish',methods=["GET","POST"])
-def faborite():
+def finish():
     if request.method == "GET":
         if 'theme_id' is None:
             # theme_id が設定されていないとトップページに戻す
