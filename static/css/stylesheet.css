@@ -191,8 +191,11 @@ p {/* アイディアしりとり説明 */
 
 .shiritori-area {
   height: 400px;
+  width: 250px;
+  text-align: left;
   margin-right: auto;
   margin-left: auto;
+  overflow: auto;
 }
 
 /* 連想入力 */
