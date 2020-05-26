@@ -117,6 +117,28 @@ def remind():
 
         return render_template("remind.html", shiritori_word = shiritori_list[1], theme = theme)
 
+@app.route('/favorite',methods=["GET","POST"])
+def faborite():
+    if request.method == "GET":
+        if 'theme_id' is None:
+            # theme_id が設定されていないとトップページに戻す
+            return render_template("index.html")
+        else:
+            
+            return render_template("favorite.html")
+    else:
+        return redirect('/finish')
+
+@app.route('/finish',methods=["GET","POST"])
+def faborite():
+    if request.method == "GET":
+        if 'theme_id' is None:
+            # theme_id が設定されていないとトップページに戻す
+            return render_template("index.html")
+        else:
+            return render_template("favorite.html")
+    else:
+        return redirect('/')
 
 
 ## おまじない
