@@ -109,7 +109,7 @@ def remind():
             #db remind に 連想をインサート
             conn = sqlite3.connect('service.db')
             c = conn.cursor()
-            c.execute("insert into remind values(?,?,?)", (theme_id,shiritori_id,remind,) )
+            c.execute("insert into remind values(?,?,?,null)", (theme_id,shiritori_id,remind,) )
             conn.commit()
             conn.close()
 
