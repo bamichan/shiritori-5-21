@@ -87,14 +87,14 @@ def remind():
             remind = request.form.get('remind')
 
             # テーマ名を取ってくる
-            conn = sqlite3.connect("servise.db")
+            conn = sqlite3.connect("service.db")
             c = conn.cursor()
             c.execute("select theme from themes where id = ?", (theme_id,))
             theme = c.fetchone()
             c.close()
 
             # しりとりの内容を取ってくる
-            conn = sqlite3.connect("servise.db")
+            conn = sqlite3.connect("service.db")
             c = conn.cursor()
             c.execute("select word,id from shiritori where theme_id = ?", (theme_id,))
             shiritori_list = []
