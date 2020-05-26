@@ -191,6 +191,8 @@ p {/* アイディアしりとり説明 */
 
 .shiritori-area {
   height: 400px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* 連想入力 */
