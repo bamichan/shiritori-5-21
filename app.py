@@ -58,11 +58,19 @@ def shiritori():
         if word_re(word):
             conn = sqlite3.connect('service.db')
             c = conn.cursor()
-            #db shiritori に theme_idと単語をインサート
-            c.execute("insert into shiritori values(?,?,null)", (theme_id,word,))
-            conn.commit()
-            conn.close()
-            return jsonify({'word_output':word,'error':'入力完了'})
+            c.execute("select count(*) from shiritori where word = ? and theme_id = ?", (word,theme_id,))
+            word_count = c.fetchone()
+            # 入力された単語と同じ単語がデータベースの中に何個あるかを数える
+            print(word_count[0])
+            if word_count[0] == 0:
+                #db shiritori に theme_idと単語をインサート
+                c.execute("insert into shiritori values(?,?,null)", (theme_id,word,))
+                conn.commit()
+                conn.close()
+                return jsonify({'word_output':word,'error':'入力完了'})
+            else:
+                conn.close()
+                return jsonify({'error' : 'この単語はすでに使われています'})
         else:
             return jsonify({'error' : 'ひらがなかカタカナで入力してください'})
 
@@ -108,6 +116,8 @@ def remind():
         conn.close()
 
         return render_template("remind.html", shiritori_word = shiritori_list[1], theme = theme)
+
+
 
 ## おまじない
 if __name__ == "__main__":
