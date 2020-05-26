@@ -11,15 +11,17 @@
   </div>
 
   <div class="remind-area">
-    <div class="shiritori-area">
+    <div class="">
       {{shiritori_word}}
     </div>
-    <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
-    <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
+    <form action="/remind" method="POST" class="margin-bottom" id="remind_form">
+      <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
+      <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
+    </form>
   </div>
 
   <div>
-    <input type="submit" value="次へ" class="button margin-top margin-bottom" onclick="location.href='./favorite.html'">
+    <input type="submit" value="次へ" id="remind_submit" class="button margin-top margin-bottom">
   </div>
 
 </main>
