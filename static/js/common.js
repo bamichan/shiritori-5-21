@@ -1,6 +1,4 @@
 $(function () {
-    
-    var wordNum = 1;
     $('#shiritori_form').on('submit', function (event) {
         $.ajax({
                 data: {
@@ -11,8 +9,7 @@ $(function () {
             })
             .done(function (data) {
                 if (data.error == '入力完了') {
-                    $('#word_output ul').append('<li>' + wordNum + '.' + data.word_output + '</li>').show();
-                    wordNum += 1;
+                    $('#word_output ol').append('<li>' + data.word_output + '</li>').show();
                     $('#error_text').hide();
                 } else {
                     $('#error_text').text(data.error).show();
