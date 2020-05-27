@@ -10,6 +10,7 @@ $(function () {
             .done(function (data) {
                 if (data.error == '入力完了') {
                     $('#word_output ol').append('<li>' + data.word_output + '</li>').show();
+                    $("#word_output ol").scrollTop($("#word_output ol")[0].scrollHeight);
                     $('#error_text').hide();
                 } else {
                     $('#error_text').text(data.error).show();
@@ -32,7 +33,7 @@ $(function () {
         // 一定時間経過後に指定ページにジャンプする
         setTimeout(function () {
             location.href = "/remind";
-        }, 64000);
+        }, 9999000);
         //スタートボタンを隠す
         $('.start_button').css('display', 'none');
         //しりとりフォームを入力できるようにする
