@@ -208,6 +208,10 @@ p {/* アイディアしりとり説明 */
   margin-top: 20px;
 }
 
+.shiritori-remind {
+  margin-right: 20px;
+}
+
 .remind-area {
   display: flex;
   justify-content: center;
