@@ -150,7 +150,7 @@ def favorite():
             c = conn.cursor()
             c.execute("select theme from themes where id = ?", (theme_id,))
             theme = c.fetchone()
-            c.execute("select remind,id from remind where theme_id = ?", (theme_id,))
+            c.execute("select remind,id from remind where theme_id = ? and remind != '' ", (theme_id,))
             remind_list = []
             for row in c.fetchall():
                 remind_list.append({'remind': row[0],'id':row[1]})
@@ -161,7 +161,7 @@ def favorite():
         conn = sqlite3.connect("service.db")
         c = conn.cursor()
         for i in favs:
-            c.execute("update remind set favorite = 1 where id = ? and remind = ''", (i,))
+            c.execute("update remind set favorite = 1 where id = ?", (i,))
         conn.commit()
         c.close()
         return redirect('/finish')
