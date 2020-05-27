@@ -84,7 +84,6 @@ def remind():
         else:
             #sessionからtheme_idを取得
             theme_id = session['theme_id']
-            remind = request.form.get('remind')
 
             # テーマ名を取ってくる
             conn = sqlite3.connect("service.db")
