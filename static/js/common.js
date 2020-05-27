@@ -21,34 +21,6 @@ $(function () {
         event.preventDefault();
     });
 
-    $('.outText').on('click', function (event) {
-        $.ajax({
-                data: {
-                    remind: $('.outText').val()
-                },
-                type: 'POST',
-                url: '/favorite'
-            })
-            .done(function (data) {
-
-            });
-        event.preventDefault();
-    });
-
-    $('.outText').on('click', function (event) {
-        $.ajax({
-                data: {
-                    remind: $('.outText').val()
-                },
-                type: 'POST',
-                url: '/favorite'
-            })
-            .done(function (data) {
-
-            });
-        event.preventDefault();
-    });
-
 
     // 変数targetに、入力不可にしたい項目を定義
     var target = document.getElementById("words");
@@ -60,7 +32,7 @@ $(function () {
         // 一定時間経過後に指定ページにジャンプする
         setTimeout(function () {
             location.href = "/remind";
-        }, 66000);
+        }, 64000);
         //スタートボタンを隠す
         $('.start_button').css('display', 'none');
         //しりとりフォームを入力できるようにする
