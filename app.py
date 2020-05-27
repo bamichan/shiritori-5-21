@@ -136,7 +136,7 @@ def remind():
             c.execute("insert into remind values(?,null,?,null,0)", (theme_id,i,))
         conn.commit()
         conn.close()
-        return render_template("favorite.html")
+        return redirect("/favorite")
 
 @app.route('/favorite',methods=["GET","POST"])
 def favorite():
@@ -161,7 +161,7 @@ def favorite():
         conn = sqlite3.connect("service.db")
         c = conn.cursor()
         for i in favs:
-            c.execute("update remind set favorite = 1 where id = ?", (i,))
+            c.execute("update remind set favorite = 1 where id = ? and remind = ''", (i,))
         conn.commit()
         c.close()
         return redirect('/finish')
