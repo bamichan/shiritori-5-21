@@ -136,7 +136,7 @@ def remind():
             c.execute("insert into remind values(?,null,?,null,0)", (theme_id,i,))
         conn.commit()
         conn.close()
-        return render_template("favorite.html")
+        return redirect("/favorite")
 
 @app.route('/favorite',methods=["GET","POST"])
 def favorite():
