@@ -2,24 +2,22 @@
 {% block content %}
 <!-- 最終ページ -->
 <main class="page-contents wrapper">
-  <div class="theme content"><p>（例）テーマ</p><!-- テーマ表示 成重さんよろしく！ --></div>
+  <div class="theme content">
+    <p>{{theme[0]}}</p><!-- テーマ表示 -->
+  </div>
 
-  <div class="description-favorite"><p>いいアイディアが浮かぶことを願っています</p></div>
+  <div class="description-favorite">
+    <p>いいアイディアが浮かぶことを願っています</p>
+  </div>
 
   <!-- ここから -->
   <div class="reminded-contents">
+    {% for item in favorite_list %}
     <div class="favorited">
-      テキストテキスト
-      <!-- お気に入りされた連想 成重さんよろしく！ -->
+      <!-- お気に入りされた連想 -->
+      {{item["remind"]}}
     </div>
-    <div class="favorited">
-      テキストテキストテキスト
-      <!-- お気に入りされた連想 成重さんよろしく！ -->
-    </div>
-    <div class="favorited">
-      テキスト
-      <!-- お気に入りされた連想 成重さんよろしく！ -->
-    </div>
+    {% endfor %}
   </div>
   <!-- ここまでコピペで行数増える -->
 
