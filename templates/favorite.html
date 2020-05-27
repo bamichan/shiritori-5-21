@@ -3,7 +3,7 @@
 <!-- お気に入りページ -->
 <main class="page-contents wrapper">
   <div class="theme content">
-    <p>（例）テーマ</p><!-- テーマ表示 成重さんよろしく！ -->
+    <p>{{theme[0]}}</p><!-- テーマ表示 -->
   </div>
 
   <div class="description-favorite">
@@ -12,17 +12,18 @@
 
   <!-- ここから -->
   <div class="reminded-contents">
-    {% for item in remind_list %}
-    <div class="outText">
-      {{item["remind"]}}
-    </div>
-    {% endfor %}
+    <form action="/favorite" method="POST">
+      {% for item in remind_list %}
+      <label class="outText"><input type="checkbox" name="fav" value="{{item['id']}}">{{item["remind"]}}</label>
+      {% endfor %}
+      <div class="margin-top margin-bottom">
+        <input type="submit" value="次へ" class="button">
+      </div>
+    </form>
   </div>
   <!-- ここまでコピペで行数増える -->
 
-  <div class="margin-top margin-bottom">
-    <input type="submit" value="次へ" class="button">
-  </div>
+
 
 </main>
 {% endblock %}

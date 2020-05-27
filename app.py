@@ -89,14 +89,14 @@ def remind():
         remind = request.form.get('remind')
 
         # テーマ名を取ってくる
-        conn = sqlite3.connect("servise.db")
+        conn = sqlite3.connect("service.db")
         c = conn.cursor()
         c.execute("select theme from themes where id = ?", (theme_id,))
         theme = c.fetchone()
         c.close()
 
         # しりとりの内容を取ってくる
-        conn = sqlite3.connect("servise.db")
+        conn = sqlite3.connect("service.db")
         c = conn.cursor()
         c.execute("select word,id from shiritori where theme_id = ?", (theme_id,))
         shiritori_list = []
@@ -125,18 +125,24 @@ def favorite():
             return render_template("index.html")
         else:
             theme_id = session['theme_id']
-            conn = sqlite3.connect("servise.db")
+            conn = sqlite3.connect("service.db")
             c = conn.cursor()
-            c.execute("select remind from remind where theme_id = ?", (theme_id,))
+            c.execute("select theme from themes where id = ?", (theme_id,))
+            theme = c.fetchone()
+            c.execute("select remind,id from remind where theme_id = ?", (theme_id,))
             remind_list = []
             for row in c.fetchall():
-                remind_list.append({'remind': row[0]})
+                remind_list.append({'remind': row[0],'id':row[1]})
             c.close() 
-            return render_template("favorite.html",remind_list = remind_list)
+            return render_template("favorite.html",remind_list = remind_list,theme = theme)
     else:
-        conn = sqlite3.connect("servise.db")
+        favs = request.form.getlist("fav")
+        conn = sqlite3.connect("service.db")
         c = conn.cursor()
-        c.execute("select remind from remind where theme_id = ?", (theme_id,))
+        for i in favs:
+            c.execute("update remind set favorite = 1 where id = ?", (i,))
+        conn.commit()
+        c.close()
         return redirect('/finish')
 
 @app.route('/finish',methods=["GET","POST"])
@@ -146,7 +152,17 @@ def finish():
             # theme_id が設定されていないとトップページに戻す
             return render_template("index.html")
         else:
-            return render_template("favorite.html")
+            theme_id = session['theme_id']
+            conn = sqlite3.connect("service.db")
+            c = conn.cursor()
+            c.execute("select theme from themes where id = ?", (theme_id,))
+            theme = c.fetchone()
+            c.execute("select remind from remind where favorite = 1")
+            favorite_list = []
+            for row in c.fetchall():
+                favorite_list.append({'remind': row[0]})
+            c.close()
+            return render_template("finish.html",favorite_list = favorite_list, theme = theme)
     else:
         return redirect('/')
 
