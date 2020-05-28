@@ -11,13 +11,14 @@
   </div>
 
   <!-- ここから -->
-  <div class="reminded-contents">
+  <div class="reminded-contents fav_finish">
     {% for item in favorite_list %}
     <div class="favorited">
       <!-- お気に入りされた連想 -->
       {{item["remind"]}}
     </div>
     {% endfor %}
+    <div class="favorited_space"></div>
   </div>
   <!-- ここまでコピペで行数増える -->
 

@@ -78,6 +78,7 @@ p {
 .b-twitter {
   background-color: #55acee;
 }
+
 .b-facebook {
   background-color: #3b5998;
 }
@@ -85,24 +86,37 @@ p {
 .sns-button {
   color: whitesmoke;
   display: inline-block;
-  border-radius: 10px;        /* 角丸       */
-  font-size: 16pt;        /* 文字サイズ */
-  text-align: center;      /* 文字位置   */
-  cursor: pointer;     /* カーソル   */
-  padding: 10px 10px;   /* 余白       */
-  line-height: 1em;         /* 1行の高さ  */
-  opacity: 1;         /* 透明度     */
-  transition: 0s;         /* なめらか変化 */
-  box-shadow: 3px 3px 4px #666666;  /* 影の設定 */
+  border-radius: 10px;
+  /* 角丸       */
+  font-size: 16pt;
+  /* 文字サイズ */
+  text-align: center;
+  /* 文字位置   */
+  cursor: pointer;
+  /* カーソル   */
+  padding: 10px 10px;
+  /* 余白       */
+  line-height: 1em;
+  /* 1行の高さ  */
+  opacity: 1;
+  /* 透明度     */
+  transition: 0s;
+  /* なめらか変化 */
+  box-shadow: 3px 3px 4px #666666;
+  /* 影の設定 */
   width: 22px;
   height: 22px;
 }
+
 .sns-button a {
   color: whitesmoke;
 }
+
 .sns-button:hover {
-  box-shadow: none;        /* カーソル時の影消去 */
-  opacity: 0.9;         /* 透明度     */
+  box-shadow: none;
+  /* カーソル時の影消去 */
+  opacity: 0.9;
+  /* 透明度     */
 }
 
 /* footer ----------*/
@@ -336,7 +350,7 @@ p {
   margin: 0 10% 0 10%;
 }
 
-.reminded-favorite{
+.reminded-favorite .fav_check {
   padding: 2.5% 0;
   display: flex;
   flex-direction: row;
@@ -347,29 +361,23 @@ p {
 .favorited {
   box-sizing: border-box;
   width: 100%;
-  /* 一旦100%幅     */
-  max-width: 265px;
-  /* 最大幅 */
+  max-width: 47%;
   height: auto;
-  /* 高さ   */
-  width: 266px;
   background: #ffffff;
-  /* 背景色 */
   border: 2px solid #cc2929;
-  /* 枠線   */
   border-radius: 4px;
-  /* 角丸   */
   padding: 5px 10px;
-  /* 文字の余白 */
-  /* margin-left: 30px; */
   font-size: 16px;
-  /* 文字サイズ */
   color: #333333;
-  /* 文字の色   */
   font-weight: bold;
-  /* 文字の太字 */
   letter-spacing: .1em;
-  /* 文字の間隔 */
+  margin: 5px;
+}
+
+.favorited_space {
+  width: 100%;
+  max-width: 47%;
+  margin: 5px;
 }
 
 #remind_form {
@@ -393,4 +401,17 @@ div#word_output ol {
   margin: 0 auto;
   height: 400px;
   overflow: auto;
+}
+
+div.fav_check label.outText {
+  width: 31%;
+  margin: 5px;
+}
+
+.reminded-contents form.reminded-favorite {
+  width: 100%;
+}
+
+.fav_finish {
+  flex-wrap: wrap;
 }
