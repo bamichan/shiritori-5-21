@@ -14,6 +14,7 @@ body {
   /* 行の高さ */
   color: #333333;
   /* 文字色 */
+  height: 100vh;
 }
 
 a {
@@ -128,7 +129,7 @@ p {
 /* main共通 ----------*/
 .page-contents {
   text-align: center;
-  /* height: 600px; */
+  height: 600px;
 }
 
 .content {
@@ -184,12 +185,11 @@ p {
 .outText {
   box-sizing: border-box;
   width: 100%;
-  /* 一旦100%幅     */
+  /* height:auto;を使うため */
   max-width: 265px;
   /* 最大幅 */
   height: auto;
   /* 高さ   */
-  width: 266px;
   background: #ffffff;
   /* 背景色 */
   border: 2px solid #666666;
@@ -198,7 +198,6 @@ p {
   /* 角丸   */
   padding: 5px 10px;
   /* 文字の余白 */
-  /* margin-left: 30px; */
   font-size: 16px;
   /* 文字サイズ */
   color: #333333;
@@ -209,16 +208,16 @@ p {
   /* 文字の間隔 */
 }
 .outText:hover {
-  border-color: #cc2929;
+  border-color: #ff33cc;
   /* 枠線色     */
   opacity: 0.8;
 }
 .outText:active {
-  border-color: #cc2929;
+  border-color: #ff33cc;
   /* 枠線色     */
 }
 .outText:focus {
-  border-color: #cc2929;
+  border-color: #ff33cc;
   /* 枠線色     */
 }
 
@@ -248,6 +247,11 @@ p {
   /* なめらか変化 */
   box-shadow: 3px 3px 4px #666666;
   /* 影の設定 */
+  border-width: 2px;
+  border-style: outset;
+  border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
+  /* ボーダーの色半分ずつ違う */
+  border-image: initial;
 }
 
 .button:hover {
@@ -303,11 +307,11 @@ p {
   margin-left: auto;
   overflow: auto;
 }
-
+/* ↑と同じ？？ ↓これは何だ？ by織田 */
 div #word_output ol {
   margin: 0 auto;
   height: 400px;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 /* 連想入力 */
@@ -320,27 +324,6 @@ div #word_output ol {
   margin-top: 20px;
 }
 
-#remind_form {
-  width: 100%;
-}
-
-form #remind_form div div {
-  width: 50%;
-  float: left;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-/* .remind-area {
-  display: flex;
-  justify-content: center;
-} */
-.clearfix::after { /* しりとりと連想入力欄を二列に並べる */
-  content: "";
-  display: block;
-  clear: both;
-}
-
 .description-remind {
   margin-top: 20px;
   margin-right: 10%;
@@ -348,6 +331,33 @@ form #remind_form div div {
   text-align: center;
   border: 2px dashed #666666;
   border-radius: 10px;
+}
+
+.remind-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#remind_form {
+  width: 100%;
+  max-height: 405px;
+  overflow: auto;
+}
+
+#remind_form div div {
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* 次へボタンを下の中央に並べる */
+/* https://qiita.com/mariofujisaki/items/2ad1de8432d7249afadc */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 /* お気に入りページ */
@@ -363,11 +373,12 @@ form #remind_form div div {
 
 .reminded-contents {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
-  /* max-width: 800px; */
+  max-height: 424px;
   text-align: center;
   margin: 0 10% 0 10%;
+  overflow: auto;
 }
 
 .reminded-favorite .fav_check {
@@ -387,24 +398,33 @@ form.reminded-favorite {
 }
 
 /* 最終ページ */
+.favorited-contents {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  max-height: 359px;
+  text-align: center;
+  margin: 0 10% 0 10%;
+  overflow: auto;
+}
+
 .favorited {
   box-sizing: border-box;
   width: 100%;
-  /* 一旦100%幅     */
+  /* height:auto;を使うため */
   max-width: 265px;
   /* 最大幅 */
   height: auto;
+  max-height: 50px;
   /* 高さ   */
-  width: 266px;
   background: #ffffff;
   /* 背景色 */
-  border: 2px solid #cc2929;
+  border: 2px solid #ff33cc;
   /* 枠線   */
   border-radius: 4px;
   /* 角丸   */
   padding: 5px 10px;
   /* 文字の余白 */
-  /* margin-left: 30px; */
   font-size: 16px;
   /* 文字サイズ */
   color: #333333;
@@ -414,10 +434,12 @@ form.reminded-favorite {
   letter-spacing: .1em;
   /* 文字の間隔 */
   margin: 5px;
+  align-items: baseline;
+  /* 文字の量に応じて高さを変える */
 }
 
-.favorited_finish {
+/* .favorited_finish {
   width: 266px;
   max-width: 265px;
   margin: 5px;
-}
+} */

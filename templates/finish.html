@@ -11,20 +11,21 @@
   </div>
 
 
-  <div class="reminded-contents">
+  <div class="favorited-contents">
     {% for item in favorite_list %}
     <div class="favorited">
       <!-- お気に入りされた連想 -->
       {{item["remind"]}}
     </div>
     {% endfor %}
-    <div class="favorited_finish"></div>
+    <!-- <div class="favorited_finish"></div> -->
   </div>
 
 
   <div class="margin-top margin-bottom">
     <!-- <input type="submit" value="連想結果を共有" class="button"> -->
-    <input type="submit" value="お気に入りを共有" class="button">
+    <a href="/" class="button">しりとりする</a>
+    <!-- <input type="submit" value="お気に入りを共有" class="button"> -->
     <!-- <input type="submit" value="保存する（ログイン）" class="button"> -->
   </div>
 
