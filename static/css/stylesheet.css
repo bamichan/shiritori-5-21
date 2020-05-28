@@ -351,3 +351,9 @@ form#remind_form div div {
   display: block;
   clear: both;
 }
+
+div#word_output ol {
+  margin: 0 auto;
+  height: 400px;
+  overflow: auto;
+}
