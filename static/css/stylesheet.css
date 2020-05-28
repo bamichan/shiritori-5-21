@@ -246,6 +246,13 @@ p {/* アイディアしりとり説明 */
   margin-left: 10%;
 }
 
+.reminded-favorite{
+  padding: 2.5% 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 /* 最終ページ */
 .favorited {
   box-sizing: border-box;
