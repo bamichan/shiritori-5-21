@@ -12,14 +12,16 @@
 
   <div class="reminded-contents">
     <form class="reminded-favorite" action="/favorite" method="POST">
-      {% for item in remind_list %}
-      <label class="outText"><input type="checkbox" name="fav" value="{{item['id']}}">{{item["remind"]}}</label>
-      {% endfor %}
-      
+      <div class="fav_check">
+        {% for item in remind_list %}
+          <label class="outText"><input type="checkbox" name="fav" value="{{item['id']}}">{{item["remind"]}}</label>
+        {% endfor %}
+      </div>
+      <div class="margin-top margin-bottom">
+        <input type="submit" value="次へ" class="button">
+      </div>
     </form>
-    <div class="margin-top margin-bottom">
-      <input type="submit" value="次へ" class="button">
-    </div>
+
   </div>
 </main>
 {% endblock %}
