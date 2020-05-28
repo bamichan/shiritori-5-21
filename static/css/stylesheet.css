@@ -208,21 +208,22 @@ p {
   letter-spacing: .1em;
   /* 文字の間隔 */
 }
-
 .outText:hover {
   border-color: #cc2929;
   /* 枠線色     */
   opacity: 0.8;
 }
-
 .outText:active {
   border-color: #cc2929;
   /* 枠線色     */
 }
-
 .outText:focus {
   border-color: #cc2929;
   /* 枠線色     */
+}
+
+.outText input[type="checkbox"] {
+  margin-right: 10px;
 }
 
 .button {
@@ -303,6 +304,12 @@ p {
   overflow: auto;
 }
 
+div #word_output ol {
+  margin: 0 auto;
+  height: 400px;
+  overflow: auto;
+}
+
 /* 連想入力 */
 .theme {
   border: 2px solid #666666;
@@ -313,19 +320,26 @@ p {
   margin-top: 20px;
 }
 
-.shiritori-remind {
-  margin-right: 20px;
+#remind_form {
+  width: 100%;
 }
 
-.remind-area {
+form #remind_form div div {
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* .remind-area {
   display: flex;
   justify-content: center;
-}
-/* .clearfix::after {
+} */
+.clearfix::after { /* しりとりと連想入力欄を二列に並べる */
   content: "";
   display: block;
   clear: both;
-} */
+}
 
 .description-remind {
   margin-top: 20px;
@@ -363,6 +377,15 @@ p {
   flex-wrap: wrap;
 }
 
+form.reminded-favorite {
+  width: 100%;
+}
+
+.reminded-favorite .fav_check label.outText {
+  width: 30%;
+  margin: 10px;
+}
+
 /* 最終ページ */
 .favorited {
   box-sizing: border-box;
@@ -391,36 +414,6 @@ p {
   letter-spacing: .1em;
   /* 文字の間隔 */
   margin: 5px;
-}
-
-#remind_form {
-  width: 100%;
-}
-
-form#remind_form div div {
-  width: 50%;
-  float: left;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-div#word_output ol {
-  margin: 0 auto;
-  height: 400px;
-  overflow: auto;
-}
-
-form.reminded-favorite {
-  width: 100%;
-}
-
-.reminded-favorite .fav_check label.outText {
-  width: 30%;
-  margin: 10px;
-}
-
-.outText input[type="checkbox"] {
-  margin-right: 10px;
 }
 
 .favorited_finish {
