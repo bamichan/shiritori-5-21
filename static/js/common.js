@@ -35,7 +35,7 @@ $(function () {
         // 一定時間経過後に指定ページにジャンプする
         setTimeout(function () {
             location.href = "/remind";
-        }, 9999000);
+        }, 60000);
         // スタートボタンを隠す
         $('.start_button').css('display', 'none');
         // しりとりフォームを入力できるようにする
