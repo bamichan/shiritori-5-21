@@ -321,6 +321,11 @@ p {
   display: flex;
   justify-content: center;
 }
+/* .clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+} */
 
 .description-remind {
   margin-top: 20px;
@@ -397,12 +402,6 @@ form#remind_form div div {
   float: left;
   margin-bottom: 10px;
   margin-top: 10px;
-}
-
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
 }
 
 div#word_output ol {
