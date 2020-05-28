@@ -10,7 +10,6 @@
     <p>書き出したテーマから自分が気に入ったものを選びましょう</p>
   </div>
 
-  <!-- ここから -->
   <div class="reminded-contents">
     <form class="reminded-favorite" action="/favorite" method="POST">
       {% for item in remind_list %}
@@ -22,6 +21,5 @@
       <input type="submit" value="次へ" class="button">
     </div>
   </div>
-  <!-- ここまでコピペで行数増える -->
 </main>
 {% endblock %}
