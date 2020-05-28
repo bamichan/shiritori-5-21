@@ -109,9 +109,6 @@ def remind():
             # for k in s_word:
             #     print(k) # ひ ふ み
 
-            # for s_len in shiritori_list in range (len(shiritori_list))
-
-
             return render_template("remind.html", shiritori_word = s_word , theme = theme_tuple[0])
     else:
         theme_id = session['theme_id']
