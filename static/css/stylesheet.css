@@ -59,6 +59,36 @@ p {/* アイディアしりとり説明 */
   color: #333333;
 }
 
+.b-twitter {
+  background-color: #55acee;
+}
+.b-facebook {
+  background-color: #3b5998;
+}
+
+.sns-button {
+  color: whitesmoke;
+  display: inline-block;
+  border-radius: 10px;        /* 角丸       */
+  font-size: 16pt;        /* 文字サイズ */
+  text-align: center;      /* 文字位置   */
+  cursor: pointer;     /* カーソル   */
+  padding: 10px 10px;   /* 余白       */
+  line-height: 1em;         /* 1行の高さ  */
+  opacity: 1;         /* 透明度     */
+  transition: 0s;         /* なめらか変化 */
+  box-shadow: 3px 3px 4px #666666;  /* 影の設定 */
+  width: 22px;
+  height: 22px;
+}
+.sns-button a {
+  color: whitesmoke;
+}
+.sns-button:hover {
+  box-shadow: none;        /* カーソル時の影消去 */
+  opacity: 0.9;         /* 透明度     */
+}
+
 /* footer ----------*/
 .page-footer {
   background-color: #99ccff;
