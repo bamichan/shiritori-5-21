@@ -240,10 +240,9 @@ p {/* アイディアしりとり説明 */
 .reminded-contents {
   display: flex;
   justify-content: space-evenly;
-  max-width: 800px;
+  /* max-width: 800px; */
   text-align: center;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin: 0 10% 0 10%;
 }
 
 .reminded-favorite{
