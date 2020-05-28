@@ -78,6 +78,7 @@ p {
 .b-twitter {
   background-color: #55acee;
 }
+
 .b-facebook {
   background-color: #3b5998;
 }
@@ -85,24 +86,37 @@ p {
 .sns-button {
   color: whitesmoke;
   display: inline-block;
-  border-radius: 10px;        /* 角丸       */
-  font-size: 16pt;        /* 文字サイズ */
-  text-align: center;      /* 文字位置   */
-  cursor: pointer;     /* カーソル   */
-  padding: 10px 10px;   /* 余白       */
-  line-height: 1em;         /* 1行の高さ  */
-  opacity: 1;         /* 透明度     */
-  transition: 0s;         /* なめらか変化 */
-  box-shadow: 3px 3px 4px #666666;  /* 影の設定 */
+  border-radius: 10px;
+  /* 角丸       */
+  font-size: 16pt;
+  /* 文字サイズ */
+  text-align: center;
+  /* 文字位置   */
+  cursor: pointer;
+  /* カーソル   */
+  padding: 10px 10px;
+  /* 余白       */
+  line-height: 1em;
+  /* 1行の高さ  */
+  opacity: 1;
+  /* 透明度     */
+  transition: 0s;
+  /* なめらか変化 */
+  box-shadow: 3px 3px 4px #666666;
+  /* 影の設定 */
   width: 22px;
   height: 22px;
 }
+
 .sns-button a {
   color: whitesmoke;
 }
+
 .sns-button:hover {
-  box-shadow: none;        /* カーソル時の影消去 */
-  opacity: 0.9;         /* 透明度     */
+  box-shadow: none;
+  /* カーソル時の影消去 */
+  opacity: 0.9;
+  /* 透明度     */
 }
 
 /* footer ----------*/
@@ -336,12 +350,13 @@ p {
 .reminded-contents {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   /* max-width: 800px; */
   text-align: center;
   margin: 0 10% 0 10%;
 }
 
-.reminded-favorite{
+.reminded-favorite .fav_check {
   padding: 2.5% 0;
   display: flex;
   flex-direction: row;
@@ -375,6 +390,7 @@ p {
   /* 文字の太字 */
   letter-spacing: .1em;
   /* 文字の間隔 */
+  margin: 5px;
 }
 
 #remind_form {
@@ -392,4 +408,23 @@ div#word_output ol {
   margin: 0 auto;
   height: 400px;
   overflow: auto;
+}
+
+form.reminded-favorite {
+  width: 100%;
+}
+
+.reminded-favorite .fav_check label.outText {
+  width: 30%;
+  margin: 10px;
+}
+
+.outText input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.favorited_finish {
+  width: 266px;
+  max-width: 265px;
+  margin: 5px;
 }
