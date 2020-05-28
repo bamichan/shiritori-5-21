@@ -1,21 +1,33 @@
-@charset "UTF-8";/* 文字化け防止 */
+@charset "UTF-8";
+/* 文字化け防止 */
 
 /* 共通部分 ----------*/
 html {
-  font-size: 100%; /* ユーザーの設定した文字サイズを正しく反映 */
+  font-size: 100%;
+  /* ユーザーの設定した文字サイズを正しく反映 */
 }
+
 body {
-  font-family: "Yu Gothic Mediam", "游ゴシック Mediam", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;/* 書体 */
-  line-height: 1.7; /* 行の高さ */
-  color: #333333; /* 文字色 */
+  font-family: "Yu Gothic Mediam", "游ゴシック Mediam", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+  /* 書体 */
+  line-height: 1.7;
+  /* 行の高さ */
+  color: #333333;
+  /* 文字色 */
 }
+
 a {
-  text-decoration: none; /* 傍線 */
+  text-decoration: none;
+  /* 傍線 */
 }
+
 img {
-  max-width: 100%; /* 画像の大きさ */
+  max-width: 100%;
+  /* 画像の大きさ */
 }
-p {/* アイディアしりとり説明 */
+
+p {
+  /* アイディアしりとり説明 */
   font-size: 20px;
   margin: 5px 0;
 }
@@ -23,12 +35,14 @@ p {/* アイディアしりとり説明 */
 /* header ----------*/
 .page-header {
   display: flex;
-  justify-content: space-between;/* タイトルとボタンを両端に */
+  justify-content: space-between;
+  /* タイトルとボタンを両端に */
   height: 90px;
   background-color: #99ccff;
 }
 
-.page-header h1 {/* タイトルを上下の中央揃え */
+.page-header h1 {
+  /* タイトルを上下の中央揃え */
   margin: auto 0;
 }
 
@@ -36,10 +50,12 @@ p {/* アイディアしりとり説明 */
   color: #333333;
 }
 
-.wrapper {/* ヘッダー、フッター、メインの幅。広がりすぎると見えにくいため。 */
+.wrapper {
+  /* ヘッダー、フッター、メインの幅。広がりすぎると見えにくいため。 */
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 4%;/* タイトル・ボタンを少し中央へ。%にしてスマホ対応 */
+  padding: 0 4%;
+  /* タイトル・ボタンを少し中央へ。%にしてスマホ対応 */
 }
 
 .page-header nav {
@@ -115,72 +131,115 @@ p {/* アイディアしりとり説明 */
 .margin-top {
   margin-top: 20px;
 }
+
 .margin-bottom {
   margin-bottom: 20px;
 }
 
 .inText {
   box-sizing: border-box;
-  width: 100%;                /* 一旦100%幅     */
-  max-width: 200px;            /* 入力域の最大幅 */
-  height: 40px;                /* 入力域の高さ   */
-  background: #ffffff;       /* 入力域の背景色 */
-  border: 2px solid #666666; /* 入力域の枠線   */
-  border-radius: 4px;          /* 入力域の角丸   */
-  padding: 0 10px;              /* 入力文字の余白 */
-  font-size: 16px;              /* 入力文字サイズ */
-  color: #333333;             /* 入力文字の色   */
-  font-weight: bold;            /* 入力文字の太字 */
-  letter-spacing: .1em;         /* 入力文字の間隔 */
+  width: 100%;
+  /* 一旦100%幅     */
+  max-width: 200px;
+  /* 入力域の最大幅 */
+  height: 40px;
+  /* 入力域の高さ   */
+  background: #ffffff;
+  /* 入力域の背景色 */
+  border: 2px solid #666666;
+  /* 入力域の枠線   */
+  border-radius: 4px;
+  /* 入力域の角丸   */
+  padding: 0 10px;
+  /* 入力文字の余白 */
+  font-size: 16px;
+  /* 入力文字サイズ */
+  color: #333333;
+  /* 入力文字の色   */
+  font-weight: bold;
+  /* 入力文字の太字 */
+  letter-spacing: .1em;
+  /* 入力文字の間隔 */
 }
+
 .inText:focus {
-  border-color: #1e6bb9;     /* 枠線色     */
+  border-color: #1e6bb9;
+  /* 枠線色     */
 }
 
 .outText {
   box-sizing: border-box;
-  width: 100%;                /* 一旦100%幅     */
-  max-width: 265px;            /* 最大幅 */
-  height: auto;                /* 高さ   */
+  width: 100%;
+  /* 一旦100%幅     */
+  max-width: 265px;
+  /* 最大幅 */
+  height: auto;
+  /* 高さ   */
   width: 266px;
-  background: #ffffff;       /* 背景色 */
-  border: 2px solid #666666; /* 枠線   */
-  border-radius: 4px;          /* 角丸   */
-  padding: 5px 10px;              /* 文字の余白 */
+  background: #ffffff;
+  /* 背景色 */
+  border: 2px solid #666666;
+  /* 枠線   */
+  border-radius: 4px;
+  /* 角丸   */
+  padding: 5px 10px;
+  /* 文字の余白 */
   /* margin-left: 30px; */
-  font-size: 16px;              /* 文字サイズ */
-  color: #333333;             /* 文字の色   */
-  font-weight: bold;            /* 文字の太字 */
-  letter-spacing: .1em;         /* 文字の間隔 */
+  font-size: 16px;
+  /* 文字サイズ */
+  color: #333333;
+  /* 文字の色   */
+  font-weight: bold;
+  /* 文字の太字 */
+  letter-spacing: .1em;
+  /* 文字の間隔 */
 }
+
 .outText:hover {
-  border-color: #cc2929;     /* 枠線色     */
+  border-color: #cc2929;
+  /* 枠線色     */
   opacity: 0.8;
 }
+
 .outText:active {
-  border-color: #cc2929;     /* 枠線色     */
+  border-color: #cc2929;
+  /* 枠線色     */
 }
+
 .outText:focus {
-  border-color: #cc2929;     /* 枠線色     */
+  border-color: #cc2929;
+  /* 枠線色     */
 }
 
 .button {
   color: #333333;
   display: inline-block;
-  border-radius: 10px;        /* 角丸       */
-  font-size: 16pt;        /* 文字サイズ */
-  text-align: center;      /* 文字位置   */
-  cursor: pointer;     /* カーソル   */
-  padding: 10px 10px;   /* 余白       */
+  border-radius: 10px;
+  /* 角丸       */
+  font-size: 16pt;
+  /* 文字サイズ */
+  text-align: center;
+  /* 文字位置   */
+  cursor: pointer;
+  /* カーソル   */
+  padding: 10px 10px;
+  /* 余白       */
   background-color: white;
-  line-height: 1em;         /* 1行の高さ  */
-  opacity: 0.9;         /* 透明度     */
-  transition: 0s;         /* なめらか変化 */
-  box-shadow: 3px 3px 4px #666666;  /* 影の設定 */
+  line-height: 1em;
+  /* 1行の高さ  */
+  opacity: 0.9;
+  /* 透明度     */
+  transition: 0s;
+  /* なめらか変化 */
+  box-shadow: 3px 3px 4px #666666;
+  /* 影の設定 */
 }
+
 .button:hover {
-  box-shadow: none;        /* カーソル時の影消去 */
-  opacity: 1;         /* 透明度     */
+  box-shadow: none;
+  /* カーソル時の影消去 */
+  opacity: 1;
+  /* 透明度     */
 }
 
 .button-input {
@@ -188,12 +247,14 @@ p {/* アイディアしりとり説明 */
 }
 
 /* topページ */
-.description-shiritori p {/* アイディアしりとり説明 */
+.description-shiritori p {
+  /* アイディアしりとり説明 */
   font-size: 20px;
   margin: 0 0 5px 0;
 }
 
-.description-thispage {/* サイトの使い方説明 */
+.description-thispage {
+  /* サイトの使い方説明 */
   font-size: 20px;
   text-align: left;
   border: 2px dashed #666666;
@@ -275,20 +336,61 @@ p {/* アイディアしりとり説明 */
   margin: 0 10% 0 10%;
 }
 
+.reminded-favorite{
+  padding: 2.5% 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 /* 最終ページ */
 .favorited {
   box-sizing: border-box;
-  width: 100%;                /* 一旦100%幅     */
-  max-width: 265px;            /* 最大幅 */
-  height: auto;                /* 高さ   */
+  width: 100%;
+  /* 一旦100%幅     */
+  max-width: 265px;
+  /* 最大幅 */
+  height: auto;
+  /* 高さ   */
   width: 266px;
-  background: #ffffff;       /* 背景色 */
-  border: 2px solid #cc2929; /* 枠線   */
-  border-radius: 4px;          /* 角丸   */
-  padding: 5px 10px;              /* 文字の余白 */
+  background: #ffffff;
+  /* 背景色 */
+  border: 2px solid #cc2929;
+  /* 枠線   */
+  border-radius: 4px;
+  /* 角丸   */
+  padding: 5px 10px;
+  /* 文字の余白 */
   /* margin-left: 30px; */
-  font-size: 16px;              /* 文字サイズ */
-  color: #333333;             /* 文字の色   */
-  font-weight: bold;            /* 文字の太字 */
-  letter-spacing: .1em;         /* 文字の間隔 */
+  font-size: 16px;
+  /* 文字サイズ */
+  color: #333333;
+  /* 文字の色   */
+  font-weight: bold;
+  /* 文字の太字 */
+  letter-spacing: .1em;
+  /* 文字の間隔 */
+}
+
+#remind_form {
+  width: 100%;
+}
+
+form#remind_form div div {
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+div#word_output ol {
+  margin: 0 auto;
+  height: 400px;
+  overflow: auto;
 }

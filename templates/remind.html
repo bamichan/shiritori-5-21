@@ -7,21 +7,24 @@
   </div>
 
   <div class="description-remind">
-    <p>しりとりとテーマを掛け合わせて</p><p>連想したものを書き出していきましょう</p>
+    <p>しりとりとテーマを掛け合わせて</p>
+    <p>連想したものを書き出していきましょう</p>
   </div>
 
   <div class="remind-area">
-    <div class="shiritori-remind">
-      <form action="/remind" method="POST" class="margin-bottom" id="remind_form">
-      {% for word in shiritori_word %}
-        <p>{{word}}</p>
-        <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
-        <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
-      {% endfor %}
+    <form action="/remind" method="POST" class="margin-bottom" id="remind_form">
+      <div class="clearfix">
+        {% for word in shiritori_word %}
+        <div>
+          <p>{{word}}</p>
+          <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
+          <input type="text" name="remind" id="remind" class="inText" placeholder="アイディアを入力">
+        </div>
+        {% endfor %}
+      </div>
       <br><input type="submit" value="次へ" id="remind_submit" class="button margin-top margin-bottom">
-      </form>
-    </div>
-    
+    </form>
+
   </div>
 
 
