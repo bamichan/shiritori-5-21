@@ -179,7 +179,7 @@ def finish():
             c = conn.cursor()
             c.execute("select theme from themes where id = ?", (theme_id,))
             theme = c.fetchone()
-            c.execute("select remind from remind where favorite = 1")
+            c.execute("select remind from remind where favorite = 1 and theme_id = ?",(theme_id,))
             favorite_list = []
             for row in c.fetchall():
                 favorite_list.append({'remind': row[0]})
