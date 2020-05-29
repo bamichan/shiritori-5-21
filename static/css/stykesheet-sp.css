@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /* 文字化け防止 */
-@media(min-width: 990px) {
+@media(max-width: 990px) {
 
   /* 共通部分 ----------*/
   html {
     font-size: 100%;
     /* ユーザーの設定した文字サイズを正しく反映 */
   }
-  
+
   body {
     font-family: "Yu Gothic Mediam", "游ゴシック Mediam", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
     /* 書体 */
@@ -17,23 +17,23 @@
     /* 文字色 */
     height: 100vh;
   }
-  
+
   a {
     text-decoration: none;
     /* 傍線 */
   }
-  
+
   img {
     max-width: 100%;
     /* 画像の大きさ */
   }
-  
+
   p {
     /* アイディアしりとり説明 */
     font-size: 20px;
     margin: 5px 0;
   }
-  
+
   /* header ----------*/
   .page-header {
     display: flex;
@@ -42,16 +42,16 @@
     height: 90px;
     background-color: #99ccff;
   }
-  
+
   .page-header h1 {
     /* タイトルを上下の中央揃え */
     margin: auto 0;
   }
-  
+
   .page-header h1 a {
     color: #333333;
   }
-  
+
   .wrapper {
     /* ヘッダー、フッター、メインの幅。広がりすぎると見えにくいため。 */
     max-width: 1100px;
@@ -59,32 +59,32 @@
     padding: 0 4%;
     /* タイトル・ボタンを少し中央へ。%にしてスマホ対応 */
   }
-  
+
   .page-header nav {
     margin: auto 0;
   }
-  
+
   .main-nav {
     display: flex;
     list-style: none;
   }
-  
+
   .main-nav li {
     margin-left: 36px;
   }
-  
+
   .main-nav a {
     color: #333333;
   }
-  
+
   .b-twitter {
     background-color: #55acee;
   }
-  
+
   .b-facebook {
     background-color: #3b5998;
   }
-  
+
   .sns-button {
     color: whitesmoke;
     display: inline-block;
@@ -109,49 +109,49 @@
     width: 22px;
     height: 22px;
   }
-  
+
   .sns-button a {
     color: whitesmoke;
   }
-  
+
   .sns-button:hover {
     box-shadow: none;
     /* カーソル時の影消去 */
     opacity: 0.9;
     /* 透明度     */
   }
-  
+
   /* footer ----------*/
   .page-footer {
     background-color: #99ccff;
     text-align: center;
   }
-  
+
   /* main共通 ----------*/
   .page-contents {
     text-align: center;
     height: 600px;
   }
-  
+
   .content {
     margin-top: 80px;
     margin-right: 10%;
     margin-left: 10%;
   }
-  
+
   .bold {
     font-size: 25px;
     font-weight: bold;
   }
-  
+
   .margin-top {
     margin-top: 20px;
   }
-  
+
   .margin-bottom {
     margin-bottom: 20px;
   }
-  
+
   .inText {
     box-sizing: border-box;
     width: 100%;
@@ -177,12 +177,12 @@
     letter-spacing: .1em;
     /* 入力文字の間隔 */
   }
-  
+
   .inText:focus {
     border-color: #1e6bb9;
     /* 枠線色     */
   }
-  
+
   .outText {
     box-sizing: border-box;
     width: 100%;
@@ -221,11 +221,11 @@
     border-color: #ff33cc;
     /* 枠線色     */
   }
-  
+
   .outText input[type="checkbox"] {
     margin-right: 10px;
   }
-  
+
   .button {
     color: #333333;
     display: inline-block;
@@ -254,25 +254,25 @@
     /* ボーダーの色半分ずつ違う */
     border-image: initial;
   }
-  
+
   .button:hover {
     box-shadow: none;
     /* カーソル時の影消去 */
     opacity: 1;
     /* 透明度     */
   }
-  
+
   .button-input {
     margin-left: 30px;
   }
-  
+
   /* topページ */
   .description-shiritori p {
     /* アイディアしりとり説明 */
     font-size: 20px;
     margin: 0 0 5px 0;
   }
-  
+
   .description-thispage {
     /* サイトの使い方説明 */
     font-size: 20px;
@@ -281,7 +281,7 @@
     border-radius: 20px;
     padding: 20px;
   }
-  
+
   /* しりとりページ */
   .timer {
     border: 2px solid #666666;
@@ -295,11 +295,11 @@
     display: flex;
     justify-content: space-between;
   }
-  
+
   .start_button {
     text-align: center;
   }
-  
+
   .shiritori-area {
     height: 400px;
     width: 250px;
@@ -314,7 +314,7 @@
     height: 400px;
     overflow: auto;
   }
-  
+
   /* 連想入力 */
   .theme {
     border: 2px solid #666666;
@@ -324,7 +324,7 @@
     margin: 0 auto;
     margin-top: 20px;
   }
-  
+
   .description-remind {
     margin-top: 20px;
     margin-right: 10%;
@@ -333,26 +333,26 @@
     border: 2px dashed #666666;
     border-radius: 10px;
   }
-  
+
   .remind-area {
     width: 100%;
     display: flex;
     justify-content: center;
   }
-  
+
   #remind_form {
     width: 100%;
     max-height: 405px;
     overflow: auto;
   }
-  
+
   #remind_form div div {
     width: 50%;
     float: left;
     margin-bottom: 10px;
     margin-top: 10px;
   }
-  
+
   /* 次へボタンを下の中央に並べる */
   /* https://qiita.com/mariofujisaki/items/2ad1de8432d7249afadc */
   .clearfix::after {
@@ -360,7 +360,7 @@
     display: block;
     clear: both;
   }
-  
+
   /* お気に入りページ */
   .description-favorite {
     margin-top: 20px;
@@ -371,7 +371,7 @@
     border: 2px dashed #666666;
     border-radius: 10px;
   }
-  
+
   .reminded-contents {
     display: flex;
     justify-content: space-between;
@@ -381,23 +381,23 @@
     margin: 0 10% 0 10%;
     overflow: auto;
   }
-  
+
   .reminded-favorite .fav_check {
     padding: 2.5% 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  
+
   form.reminded-favorite {
     width: 100%;
   }
-  
+
   .reminded-favorite .fav_check label.outText {
     width: 30%;
     margin: 10px;
   }
-  
+
   /* 最終ページ */
   .favorited-contents {
     display: flex;
@@ -408,7 +408,7 @@
     margin: 0 10% 0 10%;
     overflow: auto;
   }
-  
+
   .favorited {
     box-sizing: border-box;
     width: 100%;
@@ -438,10 +438,5 @@
     align-items: baseline;
     /* 文字の量に応じて高さを変える */
   }
-  
-  /* .favorited_finish {
-    width: 266px;
-    max-width: 265px;
-    margin: 5px;
-  } */
+
 }
