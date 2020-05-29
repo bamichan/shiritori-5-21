@@ -91,7 +91,6 @@ def remind():
             c.execute("select theme from themes where id = ?", (theme_id,))
             theme_tuple = c.fetchone() # タプル型('テーマ',)
             c.close()
-            print(theme_tuple[0]) # テーマ
 
             # しりとりの内容を取ってくる
             conn = sqlite3.connect("service.db")
@@ -102,12 +101,9 @@ def remind():
             for row in c.fetchall():
                 shiritori_list.append({'id': row[0], 'word': row[1]})
             c.close()
-            print(shiritori_list) # [{'id':1, 'word':'ひ'}, {'id':2, 'word':'ふ'}, {'id':3, 'word':'み'}]
 
             # wordだけのリスト型
             s_word = [w['word'] for w in shiritori_list] # ['ひ','ふ','み']
-            # for k in s_word:
-            #     print(k) # ひ ふ み
 
             return render_template("remind.html", shiritori_word = s_word , theme = theme_tuple[0])
     else:
