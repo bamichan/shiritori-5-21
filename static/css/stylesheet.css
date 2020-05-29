@@ -312,10 +312,9 @@
     text-align: left;
     margin-right: auto;
     margin-left: auto;
-    /* overflow: auto; */
   }
   /* ↓入力に従って自動で最下部へスクロール */
-  div #word_output ol {
+  div#word_output ol {
     margin: 0 auto;
     height: 376px;
     overflow: auto;
