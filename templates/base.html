@@ -9,16 +9,17 @@
     <title>アイディアしりとり</title>
     <link rel="stylesheet" href="../static/css/stylesheet-reset.css">
     <link rel="stylesheet" href="../static/css/stylesheet.css">
+    <link rel="stylesheet" href="../static/css/stykesheet-sp.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
-    <script type="text/javascript" src="./js/jquery-3.5.0.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="./js/jquery-3.5.0.js"></script> -->
 </head>
 
 <body>
     <header class="page-header wrapper">
 
         <h1><a href="/">アイディアしりとり</a></h1>
-        <nav>
+        <!-- PCナビメニュー -->
+        <nav class="nav">
             <ul class="main-nav">
                 <li class="b-facebook sns-button"><a href="http://www.facebook.com/share.php?u=http://127.0.0.1:5000/" rel="nofollow" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                 <li class="b-twitter sns-button"><a href="https://twitter.com/share?
@@ -33,6 +34,26 @@
                 <!-- <li><a href="#" class="button">ログイン/新規登録</a></li> -->
             </ul>
         </nav>
+        <!-- スマホナビメニュー -->
+        <span class="nav_toggle">
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
+        <nav class="nav-hum">
+            <ul class="nav_menu_ul">
+                <li class="b-facebook sns-button nav_menu_li"><a href="http://www.facebook.com/share.php?u=http://127.0.0.1:5000/" rel="nofollow" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="b-twitter sns-button nav_menu_li"><a href="https://twitter.com/share?
+                url=http://127.0.0.1:5000/
+                <!-- リリースしたらURL入れる！ -->
+                &
+                via=@sunabacoTKMT&
+                hashtags=SUNABACO,たかまつ3rd&
+                text=アイディア出しを支援するアイディアしりとりツール" 
+                rel="nofollow" 
+                target="_blank"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </nav>
     </header>
 
     {% block content %}
@@ -41,7 +62,9 @@
     <footer class="page-footer wrapper">
         <div>Copyright shiritori by <a href="https://sunabaco.com/takamatsu/">SUNABACO TAKAMATSU</a></div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="../static/js/common.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 
 </html>
