@@ -2,7 +2,8 @@
 /* 文字化け防止 */
 @media(min-width: 990px) {
 
-  /* 共通部分 ----------*/
+  /* 共通部分 
+  ------------------------------*/
   html {
     font-size: 100%;
     /* ユーザーの設定した文字サイズを正しく反映 */
@@ -34,7 +35,8 @@
     margin: 5px 0;
   }
   
-  /* header ----------*/
+  /* header 
+  ------------------------------*/
   .page-header {
     display: flex;
     justify-content: space-between;
@@ -60,7 +62,7 @@
     /* タイトル・ボタンを少し中央へ。%にしてスマホ対応 */
   }
   
-  .page-header nav {
+  .nav {
     margin: auto 0;
   }
   
@@ -76,7 +78,7 @@
   .main-nav a {
     color: #333333;
   }
-  
+
   .b-twitter {
     background-color: #55acee;
   }
@@ -120,14 +122,22 @@
     opacity: 0.9;
     /* 透明度     */
   }
+
+  /* スマホ版ハンバーガーメニュー消す */
+  .nav_toggle, .nav-hum {
+    display: none;
+  }
+
   
-  /* footer ----------*/
+  /* footer 
+  ------------------------------*/
   .page-footer {
     background-color: #99ccff;
     text-align: center;
   }
   
-  /* main共通 ----------*/
+  /* main共通 
+  ------------------------------*/
   .page-contents {
     text-align: center;
     height: 600px;
@@ -200,9 +210,7 @@
     padding: 5px 10px;
     /* 文字の余白 */
     font-size: 16px;
-    /* 文字サイズ */
     color: #333333;
-    /* 文字の色   */
     font-weight: bold;
     /* 文字の太字 */
     letter-spacing: .1em;
@@ -212,14 +220,6 @@
     border-color: #ff33cc;
     /* 枠線色     */
     opacity: 0.8;
-  }
-  .outText:active {
-    border-color: #ff33cc;
-    /* 枠線色     */
-  }
-  .outText:focus {
-    border-color: #ff33cc;
-    /* 枠線色     */
   }
   
   .outText input[type="checkbox"] {
@@ -266,11 +266,16 @@
     margin-left: 30px;
   }
   
-  /* topページ */
+  /* topページ 
+  ------------------------------*/
   .description-shiritori p {
     /* アイディアしりとり説明 */
     font-size: 20px;
     margin: 0 0 5px 0;
+  }
+
+  .description-shiritori p br {
+    display: none;
   }
   
   .description-thispage {
@@ -282,7 +287,8 @@
     padding: 20px;
   }
   
-  /* しりとりページ */
+  /* しりとりページ 
+  ------------------------------*/
   .timer {
     border: 2px solid #666666;
     border-radius: 3px;
@@ -301,21 +307,22 @@
   }
   
   .shiritori-area {
-    height: 400px;
+    height: 376px;
     width: 250px;
     text-align: left;
     margin-right: auto;
     margin-left: auto;
     /* overflow: auto; */
   }
-  /* ↑と同じ？？ ↓これは何だ？ by織田 */
+  /* ↓入力に従って自動で最下部へスクロール */
   div #word_output ol {
     margin: 0 auto;
-    height: 400px;
+    height: 376px;
     overflow: auto;
   }
   
-  /* 連想入力 */
+  /* 連想入力 
+  ------------------------------*/
   .theme {
     border: 2px solid #666666;
     border-radius: 3px;
@@ -361,7 +368,8 @@
     clear: both;
   }
   
-  /* お気に入りページ */
+  /* お気に入りページ 
+  ------------------------------*/
   .description-favorite {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -398,7 +406,8 @@
     margin: 10px;
   }
   
-  /* 最終ページ */
+  /* 最終ページ 
+  ------------------------------*/
   .favorited-contents {
     display: flex;
     /* justify-content: space-between; */

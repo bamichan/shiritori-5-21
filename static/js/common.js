@@ -1,4 +1,10 @@
 $(function () {
+    // スマホ版ハンバーガーメニュー
+    $('.nav_toggle').on('click', function () {
+        $('.nav_toggle, .nav-hum').toggleClass('show');
+    });
+
+
     // しりとり入力
     $('#shiritori_form').on('submit', function (event) {
         $.ajax({

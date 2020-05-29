@@ -2,7 +2,8 @@
 /* 文字化け防止 */
 @media(max-width: 990px) {
 
-  /* 共通部分 ----------*/
+  /* 共通部分 
+  ------------------------------*/
   html {
     font-size: 100%;
     /* ユーザーの設定した文字サイズを正しく反映 */
@@ -33,8 +34,13 @@
     font-size: 20px;
     margin: 5px 0;
   }
+  ul {
+    padding-top: 10px;
+    padding-left: 0;
+  }
 
-  /* header ----------*/
+  /* header 
+  ------------------------------*/
   .page-header {
     display: flex;
     justify-content: space-between;
@@ -60,13 +66,12 @@
     /* タイトル・ボタンを少し中央へ。%にしてスマホ対応 */
   }
 
-  .page-header nav {
+  .nav {
     margin: auto 0;
   }
 
   .main-nav {
-    display: flex;
-    list-style: none;
+    display: none;
   }
 
   .main-nav li {
@@ -114,29 +119,86 @@
     color: whitesmoke;
   }
 
-  .sns-button:hover {
-    box-shadow: none;
-    /* カーソル時の影消去 */
-    opacity: 0.9;
-    /* 透明度     */
+  /* スマホ版ハンバーガーメニュー */
+  /* 三本線 */
+  .nav_toggle {
+    display: block;
+    position: relative;
+    width: 1.75rem;
+    height: 1.5rem;
+    margin: auto 0;
+    cursor: pointer;
+    /* カーソル   */
   }
-
-  /* footer ----------*/
+  .nav_toggle i {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    transition: transform .5s, opacity .5s;
+  }
+  .nav_toggle i:nth-child(1) {
+    /* 一番上の線 */
+    top: 0;
+  }
+  .nav_toggle i:nth-child(2) {
+    /* 真ん中の線 */
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .nav_toggle i:nth-child(3) {
+    /* 一番下の線 */
+    bottom: 0;
+  }
+  /* クリックされたら×になる */
+  .nav_toggle.show i:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+  }
+  .nav_toggle.show i:nth-child(2) {
+    opacity: 0;
+  }
+  .nav_toggle.show i:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+  }
+  /* menu内 */
+  .nav-hum {
+    /* クリック前 */
+    position: fixed;
+    top: 3rem;
+    /* left: 0; */
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0s, visibility 0s;
+  }
+  .nav-hum.show {
+    /* クリック後 */
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* footer 
+  ------------------------------*/
   .page-footer {
     background-color: #99ccff;
     text-align: center;
   }
 
-  /* main共通 ----------*/
+  /* main共通 
+  ------------------------------*/
   .page-contents {
-    text-align: center;
-    height: 600px;
+    /* text-align: center; */
+    text-align: left;
   }
 
   .content {
-    margin-top: 80px;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-top: 40px;
+    /* margin-right: 10%; */
+    /* margin-left: 10%; */
   }
 
   .bold {
@@ -213,14 +275,6 @@
     /* 枠線色     */
     opacity: 0.8;
   }
-  .outText:active {
-    border-color: #ff33cc;
-    /* 枠線色     */
-  }
-  .outText:focus {
-    border-color: #ff33cc;
-    /* 枠線色     */
-  }
 
   .outText input[type="checkbox"] {
     margin-right: 10px;
@@ -263,10 +317,17 @@
   }
 
   .button-input {
-    margin-left: 30px;
+    /* margin-left: 30px; */
+    margin-top: 5px;
   }
 
-  /* topページ */
+  /* topページ 
+  ------------------------------*/
+  .page-contents .discliption .description-shiritori p{
+    text-align: left;
+  }
+
+
   .description-shiritori p {
     /* アイディアしりとり説明 */
     font-size: 20px;
@@ -276,13 +337,18 @@
   .description-thispage {
     /* サイトの使い方説明 */
     font-size: 20px;
-    text-align: left;
     border: 2px dashed #666666;
     border-radius: 20px;
     padding: 20px;
+    text-align: left;
   }
 
-  /* しりとりページ */
+  .content form{
+    text-align: center;
+  }
+
+  /* しりとりページ 
+  ------------------------------*/
   .timer {
     border: 2px solid #666666;
     border-radius: 3px;
@@ -300,22 +366,31 @@
     text-align: center;
   }
 
+  .lets {
+    text-align: center;
+  }
+
   .shiritori-area {
-    height: 400px;
+    height: 376px;
     width: 250px;
     text-align: left;
     margin-right: auto;
     margin-left: auto;
     /* overflow: auto; */
   }
-  /* ↑と同じ？？ ↓これは何だ？ by織田 */
+  /* ↓入力に従って自動で最下部へスクロール */
   div #word_output ol {
     margin: 0 auto;
-    height: 400px;
+    height: 376px;
     overflow: auto;
   }
 
-  /* 連想入力 */
+  #shiritori_form {
+    text-align: center;
+  }
+
+  /* 連想入力 
+  ------------------------------*/
   .theme {
     border: 2px solid #666666;
     border-radius: 3px;
@@ -323,13 +398,12 @@
     padding: 10px;
     margin: 0 auto;
     margin-top: 20px;
+    text-align: center;
   }
 
   .description-remind {
     margin-top: 20px;
-    margin-right: 10%;
-    margin-left: 10%;
-    text-align: center;
+    text-align: left;
     border: 2px dashed #666666;
     border-radius: 10px;
   }
@@ -342,7 +416,7 @@
 
   #remind_form {
     width: 100%;
-    max-height: 405px;
+    /* max-height: 405px; */
     overflow: auto;
   }
 
@@ -360,26 +434,26 @@
     display: block;
     clear: both;
   }
+  .remind-area form {
+    text-align: center;
+  }
 
-  /* お気に入りページ */
+  /* お気に入りページ 
+  ------------------------------*/
   .description-favorite {
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-right: 10%;
-    margin-left: 10%;
-    text-align: center;
+    text-align: left;
     border: 2px dashed #666666;
     border-radius: 10px;
   }
 
   .reminded-contents {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    max-height: 424px;
     text-align: center;
-    margin: 0 10% 0 10%;
-    overflow: auto;
+    margin: 0 5%;
   }
 
   .reminded-favorite .fav_check {
@@ -394,19 +468,18 @@
   }
 
   .reminded-favorite .fav_check label.outText {
-    width: 30%;
-    margin: 10px;
+    width: 50%;
+    float: left;
   }
 
-  /* 最終ページ */
+  /* 最終ページ 
+  ------------------------------*/
   .favorited-contents {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: center;
     flex-wrap: wrap;
-    max-height: 359px;
     text-align: center;
     margin: 0 10% 0 10%;
-    overflow: auto;
   }
 
   .favorited {
@@ -437,6 +510,10 @@
     margin: 5px;
     align-items: baseline;
     /* 文字の量に応じて高さを変える */
+  }
+
+  .to-top {
+    text-align: center;
   }
 
 }
