@@ -31,7 +31,7 @@
 
   p {
     /* アイディアしりとり説明 */
-    font-size: 20px;
+    font-size: 16px;
     margin: 5px 0;
   }
   ul {
@@ -202,7 +202,7 @@
   }
 
   .bold {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
   }
 
@@ -330,13 +330,13 @@
 
   .description-shiritori p {
     /* アイディアしりとり説明 */
-    font-size: 20px;
+    font-size: 16px;
     margin: 0 0 5px 0;
   }
 
   .description-thispage {
     /* サイトの使い方説明 */
-    font-size: 20px;
+    font-size: 16px;
     border: 2px dashed #666666;
     border-radius: 20px;
     padding: 20px;
