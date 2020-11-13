@@ -31,7 +31,7 @@
 
   p {
     /* アイディアしりとり説明 */
-    font-size: 16px;
+    font-size: 14px;
     margin: 5px 0;
   }
   ul {
@@ -95,7 +95,7 @@
     display: inline-block;
     border-radius: 10px;
     /* 角丸       */
-    font-size: 16pt;
+    font-size: 14pt;
     /* 文字サイズ */
     text-align: center;
     /* 文字位置   */
@@ -202,7 +202,7 @@
   }
 
   .bold {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
   }
 
@@ -230,7 +230,7 @@
     /* 入力域の角丸   */
     padding: 0 10px;
     /* 入力文字の余白 */
-    font-size: 16px;
+    font-size: 14px;
     /* 入力文字サイズ */
     color: #333333;
     /* 入力文字の色   */
@@ -261,7 +261,7 @@
     /* 角丸   */
     padding: 5px 10px;
     /* 文字の余白 */
-    font-size: 16px;
+    font-size: 14px;
     /* 文字サイズ */
     color: #333333;
     /* 文字の色   */
@@ -285,7 +285,7 @@
     display: inline-block;
     border-radius: 10px;
     /* 角丸       */
-    font-size: 16pt;
+    font-size: 14pt;
     /* 文字サイズ */
     text-align: center;
     /* 文字位置   */
@@ -330,13 +330,13 @@
 
   .description-shiritori p {
     /* アイディアしりとり説明 */
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 0 5px 0;
   }
 
   .description-thispage {
     /* サイトの使い方説明 */
-    font-size: 16px;
+    font-size: 14px;
     border: 2px dashed #666666;
     border-radius: 20px;
     padding: 20px;
@@ -498,7 +498,7 @@
     /* 角丸   */
     padding: 5px 10px;
     /* 文字の余白 */
-    font-size: 16px;
+    font-size: 14px;
     /* 文字サイズ */
     color: #333333;
     /* 文字の色   */
